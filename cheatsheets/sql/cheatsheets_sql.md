@@ -2,6 +2,66 @@
 
 ---
 
+### 📂 **SELECT**
+
+#### Выбрать все столбцы из таблицы
+```bash
+SELECT * FROM table_name;
+```
+
+#### Выбрать определённые столбцы
+```bash
+SELECT column1, column2 FROM table_name;
+```
+
+#### Подсчитать количество строк в таблице
+```bash
+SELECT COUNT(*) FROM table_name;
+```
+
+#### Выбрать уникальные значения (DISTINCT)
+```bash
+SELECT DISTINCT column1, column2 FROM table_name;
+```
+
+#### Создать новую таблицу на основе выборки
+```bash
+CREATE TABLE new_table AS
+(SELECT DISTINCT column1, column2 FROM old_table);
+```
+
+#### Преобразование типов (CAST)
+```bash
+SELECT CAST(1.23 AS int);        -- вернёт 1
+SELECT CAST('1.23' AS float) + 2; -- преобразует текст в число и выполнит сложение
+SELECT CAST('2023-10-01' AS DATE);
+SELECT to_date('05 Dec 2000', 'DD Mon YYYY');
+```
+
+---
+
+### 📂 **CREATE TABLE**
+
+#### Создание новой таблицы
+```bash
+CREATE TABLE table_name (
+    column1 data_type [constraints],
+    column2 data_type [constraints],
+    column3 data_type [constraints]
+);
+```
+Пример:
+```bash
+CREATE TABLE employees (
+    id INT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    salary DECIMAL(10,2),
+    hire_date DATE
+);
+```
+
+---
+
 ### 📂 **INSERT**
 
 #### Добавление одной строки
@@ -70,6 +130,20 @@ WHERE id = value;
 ```bash
 DELETE FROM table_name
 WHERE condition;
+```
+
+---
+
+### 📂 **Навигация по БД (MySQL)**
+
+#### Показать список таблиц в базе
+```bash
+SHOW TABLES;
+```
+
+#### Показать структуру таблицы
+```bash
+DESCRIBE table_name;
 ```
 
 ---
