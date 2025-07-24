@@ -38,6 +38,22 @@ SELECT CAST('2023-10-01' AS DATE);
 SELECT to_date('05 Dec 2000', 'DD Mon YYYY');
 ```
 
+#### Использование арифметических операций и переименование столбца (AS)
+```bash
+SELECT (column1 + column2) AS new_column FROM table_name;
+SELECT (column * 1.07) AS new_column FROM table_name;
+```
+
+#### Использование CASE в SELECT (условные вычисления)
+```bash
+SELECT column1, column2,
+CASE
+    WHEN column1 >= column2 THEN column1 - column2
+    ELSE column2 - column1
+END AS new_column
+FROM table_name;
+```
+
 ---
 
 ### 📂 **CREATE TABLE**
